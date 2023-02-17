@@ -1,10 +1,14 @@
-import { ADD_TO_CART } from './constant';
+import { ADD_TO_CART, REMOVE_TO_CART } from './constant';
 
 export const cartData = (data = [], action) => {
-  if (action.type === ADD_TO_CART) {
-    console.warn('reducer called', action);
-    return action.data;
-  } else {
-    return 'No Action Found';
+  switch (action.type) {
+    case ADD_TO_CART:
+      console.log('ADD to cart', action);
+      return 1 + 1;
+    case REMOVE_TO_CART:
+      console.log('Remove  to cart', action);
+      return 1 - 1;
+    default:
+      return 'No Action Found';
   }
 };
