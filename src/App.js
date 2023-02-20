@@ -5,7 +5,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Main />
+      <div style={{ margin: '5px', display: 'flex', justifyContent: 'center' }}>
+        <Main />
+      </div>
     </div>
   );
 }
