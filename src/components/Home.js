@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { addToCard, emptyCart, removeFromCart } from '../redux/action';
 import { useDispatch, useSelector } from 'react-redux';
 import { productList } from '../redux/product-action';
