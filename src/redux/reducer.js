@@ -6,9 +6,11 @@ export const cartData = (data = [], action) => {
       console.log('ADD to cart', action);
       return [action.data, ...data];
     case REMOVE_TO_CART:
+      console.log(data);
       console.log('Remove  to cart', action);
-      data.length = data.length ? data?.length - 1 : [];
-      return [...data];
+      const remaingItem = data.filter((item) => item.id !== action.data);
+
+      return [...remaingItem];
     case EMPTY_CART:
       data = [];
       return [...data];

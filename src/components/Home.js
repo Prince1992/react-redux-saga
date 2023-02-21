@@ -7,18 +7,12 @@ import { useEffect } from 'react';
 function Main() {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.productData);
-  console.log('Data', data);
-  const product = {
-    name: 'Nokia',
-    type: 'mobile',
-    price: 1000,
-    color: 'black',
+
+  const handleAddTocard = (item) => {
+    dispatch(addToCard(item));
   };
-  const handleAddTocard = () => {
-    dispatch(addToCard(product));
-  };
-  const removeFromCard = () => {
-    dispatch(removeFromCart(product));
+  const removeFromCard = (id) => {
+    dispatch(removeFromCart(id));
   };
   const emptyCartHandler = () => {
     dispatch(emptyCart());
